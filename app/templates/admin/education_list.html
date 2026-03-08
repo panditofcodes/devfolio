@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Education</h2>
+
+  <a href="{{ url_for('admin.education_create') }}" class="btn btn-dark">
+    Add Education
+  </a>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Degree</th>
+            <th>Institution</th>
+            <th>Start</th>
+            <th>End</th>
+            <th width="150">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for edu in education %}
+
+          <tr>
+            <td>{{ edu.degree }}</td>
+            <td>{{ edu.institution }}</td>
+            <td>{{ edu.start_year }}</td>
+            <td>{{ edu.end_year }}</td>
+
+            <td>
+              <a
+                href="{{ url_for('admin.education_edit', id=edu.id) }}"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Edit
+              </a>
+
+              <form
+                method="POST"
+                action="{{ url_for('admin.education_delete', id=edu.id) }}"
+                style="display: inline"
+              >
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

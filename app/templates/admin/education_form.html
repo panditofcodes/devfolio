@@ -1,0 +1,46 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<h2 class="mb-4">Education</h2>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Degree</label>
+          {{ form.degree(class="form-control") }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>Institution</label>
+          {{ form.institution(class="form-control") }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>Start Year</label>
+          {{ form.start_year(class="form-control") }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>End Year</label>
+          {{ form.end_year(class="form-control") }}
+        </div>
+
+        <div class="col-12 mb-3">
+          <label>Description</label>
+          {{ form.description(class="form-control") }}
+        </div>
+      </div>
+
+      <button class="btn btn-dark">Save</button>
+
+      <a href="{{ url_for('admin.education_list') }}" class="btn btn-secondary">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
