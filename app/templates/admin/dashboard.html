@@ -1,0 +1,126 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<h2 class="mb-4 fw-bold">Admin Dashboard</h2>
+
+<div class="row g-4">
+  <!-- Skills -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">🧠</div>
+        <h6 class="text-muted">Skills</h6>
+        <h2 class="fw-bold">{{ skills_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.skills_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">📂</div>
+        <h6 class="text-muted">Projects</h6>
+        <h2 class="fw-bold">{{ projects_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.projects_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">🎓</div>
+        <h6 class="text-muted">Education</h6>
+        <h2 class="fw-bold">{{ education_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.education_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">💼</div>
+        <h6 class="text-muted">Experience</h6>
+        <h2 class="fw-bold">{{ experience_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.experience_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">📜</div>
+        <h6 class="text-muted">Certifications</h6>
+        <h2 class="fw-bold">{{ certification_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.certification_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Links -->
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="card dashboard-card shadow-sm border-0 h-100">
+      <div class="card-body text-center">
+        <div class="mb-2 fs-3">🔗</div>
+        <h6 class="text-muted">Social Links</h6>
+        <h2 class="fw-bold">{{ social_count }}</h2>
+
+        <a
+          href="{{ url_for('admin.social_list') }}"
+          class="btn btn-sm btn-outline-dark mt-2"
+        >
+          Manage
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dashboard-card {
+    transition: all 0.2s ease;
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Social Links</h2>
+
+  <a href="{{ url_for('admin.social_create') }}" class="btn btn-dark">
+    Add Social
+  </a>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Platform</th>
+            <th>URL</th>
+            <th width="150">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for link in links %}
+
+          <tr>
+            <td>{{ link.platform }}</td>
+
+            <td>
+              <a href="{{ link.url }}" target="_blank"> {{ link.url }} </a>
+            </td>
+
+            <td>
+              <a
+                href="{{ url_for('admin.social_edit', id=link.id) }}"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Edit
+              </a>
+
+              <form
+                method="POST"
+                action="{{ url_for('admin.social_delete', id=link.id) }}"
+                style="display: inline"
+              >
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

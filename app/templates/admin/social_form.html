@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<h2 class="mb-4">Social Link</h2>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Platform</label>
+          {{ form.platform(class="form-control") }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>URL</label>
+          {{ form.url(class="form-control") }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>Icon</label>
+          {{ form.icon_class(class="form-control") }}
+        </div>
+      </div>
+
+      <button class="btn btn-dark">Save</button>
+
+      <a href="{{ url_for('admin.social_list') }}" class="btn btn-secondary">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<h2>Update Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+
+  <p>
+    {{ form.username.label }}<br />
+    {{ form.username(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.first_name.label }}<br />
+    {{ form.first_name(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.last_name.label }}<br />
+    {{ form.last_name(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.mobile.label }}<br />
+    {{ form.mobile(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.headline.label }}<br />
+    {{ form.headline(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.introduction.label }}<br />
+    {{ form.introduction(class="form-control", rows="4") }}
+  </p>
+
+  <p>
+    {{ form.location.label }}<br />
+    {{ form.location(class="form-control") }}
+  </p>
+
+  <p>
+    {{ form.profile_photo.label }}<br />
+    {{ form.profile_photo(class="form-control") }}
+  </p>
+
+  {% if user.profile_photo %}
+
+  <p>
+    <strong>Current Photo:</strong><br />
+    <img src="{{ user.profile_photo }}" width="120" />
+  </p>
+  {% endif %}
+
+  <p>{{ form.submit(class="btn btn-primary") }}</p>
+</form>
+
+<br />
+
+<a href="{{ url_for('admin.dashboard') }}">Back to Dashboard</a>
+
+{% endblock %}

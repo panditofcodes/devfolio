@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Skills</h2>
+
+  <a href="{{ url_for('admin.skill_create') }}" class="btn btn-dark">
+    Add Skill
+  </a>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Level</th>
+            <th width="150">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for skill in skills %}
+
+          <tr>
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.category }}</td>
+            <td>{{ skill.level }}</td>
+
+            <td>
+              <a
+                href="{{ url_for('admin.skill_edit', id=skill.id) }}"
+                class="btn btn-sm btn-outline-primary"
+              >
+                Edit
+              </a>
+
+              <form
+                method="POST"
+                action="{{ url_for('admin.skill_delete', id=skill.id) }}"
+                style="display: inline"
+              >
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
