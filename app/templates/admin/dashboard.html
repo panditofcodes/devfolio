@@ -112,6 +112,131 @@
   </div>
 </div>
 
+<!-- API ACCESS SECTION -->
+<div class="card shadow-sm mt-4">
+  <div class="card-body">
+    <h5 class="mb-3">API Access</h5>
+
+    <p class="text-muted small">
+      Use these endpoints to access your portfolio data programmatically.
+    </p>
+
+    <div class="list-group">
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Full Portfolio</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/portfolio</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/portfolio"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Skills</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/skills</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/skills"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Projects</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/projects</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/projects"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Experience</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/experience</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/experience"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Education</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/education</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/education"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Certifications</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/certifications</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/certifications"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <strong>Social Links</strong><br />
+          <code>/api/v1/u/{{ current_user.username }}/social</code>
+        </div>
+        <a
+          href="/api/v1/u/{{ current_user.username }}/social"
+          target="_blank"
+          class="btn btn-sm btn-outline-dark"
+        >
+          Open
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <style>
   .dashboard-card {
     transition: all 0.2s ease;
