@@ -1,5 +1,5 @@
 # DevFolio
-
+ 
 DevFolio is a backend API service for powering a developer portfolio.
 It provides structured APIs to fetch portfolio information such as projects, skills, experience, education, certifications, and social links.
 
